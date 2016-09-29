@@ -11,42 +11,28 @@
 
 @interface ELAManager : NSObject
 
+/**
+ Initialize Eula with your SDK key and secret.
+ Call this method in application:didFinishLaunchingWithOptions:
+ 
+ @discussion If you do not have a developer account register here: https://www.eula.io/register
+ If you do not know you sdk key / secret you can log in to find it here: https://www.eula.io/login
+**/
+
 + (void)setAPIKey:(NSString *)apiKey apiSecret:(NSString *)apiSecret;
 
-// Acount Specifc
-
-+ (NSString *)appName;
+// Acount Specifc Getters
 + (NSString *)apiKey;
 + (NSString *)apiSecret;
+    
+#pragma mark - App Information
 
-
-//User Specifc
-
-+ (NSString *)userIdentifier;
-+ (void)setUserIdentifier:(NSString *)identifier;
-
-+ (NSString *)userName;
-+ (void)setUserName:(NSString *)userName;
-
-+ (NSString *)userImageUrl;
-+ (void)setUserImageUrl:(NSString *)userImageUrl;
-
-
-+ (void)activateApp;
-
-+ (void)logout;
++ (void)setAppName:(NSString *)appName;
++ (NSString *)appName;
 
 #pragma mark - View Controllers
 
 + (UIViewController *)termsOfServiceViewController;
 + (UIViewController *)privacyPolicyViewController;
-
-#pragma mark - Design
-
-+ (void)setScrollToBottomEnabled:(BOOL)enabled;
-+ (BOOL)scrollToBottomEnabled;
-
-+ (void)setAlertOnAgreeEnabled:(BOOL)enabled;
-+ (BOOL)alertOnAgreeEnabled;
 
 @end
