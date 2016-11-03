@@ -27,8 +27,10 @@ Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, ad
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
 // Add this line
 [ELAManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"];
+
 ...
 }
 ```
@@ -38,10 +40,11 @@ Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, ad
 ```swift
 import Eula
 
-...
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
 // Add this line
 ELAManager.setAPIKey("YOUR_API_KEY", apiSecret:"YOUR_API_SECRET")
+
 ...
 }
 ```
