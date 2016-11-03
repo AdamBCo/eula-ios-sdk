@@ -29,8 +29,6 @@ Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, ad
 {
 // Add this line
 [ELAManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"];
-
-
 ...
 }
 ```
@@ -44,7 +42,6 @@ import Eula
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 // Add this line
 ELAManager.setAPIKey("YOUR_API_KEY", apiSecret:"YOUR_API_SECRET")
-
 ...
 }
 ```
