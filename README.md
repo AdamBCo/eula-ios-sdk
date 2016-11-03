@@ -10,7 +10,6 @@ If you do not have a developer account, please register for one [HERE](http://ww
 
 ### Step 1
 
-#### Option 1: CocoaPods
 EULA is available through [CocoaPods](http://cocoapods.org/). To install it, simply add the following line to your `Podfile`:
 
 ```
