@@ -18,19 +18,18 @@ pod 'Eula'
 
 ### Step 2
 #### Add to your App Delegate
-##### _Objective C_
 Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, add `[ELAManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"]`, where `YOUR_API_KEY` and `YOUR_API_SECRET` are two special tokens found on the [API Docs](http://eula.io/api-documents) of your dashboard.
+
+##### _Objective C_
 
 ```objc
 #import <Eula/Eula.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-// Add this line
-[ELAManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"];
-
-...
+    // Add this line
+    [ELAManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"];
+    ...
 }
 ```
 
@@ -39,12 +38,66 @@ Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, ad
 ```swift
 import Eula
 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool 
+{
+    // Add this line
+    ELAManager.setAPIKey("YOUR_API_KEY", apiSecret:"YOUR_API_SECRET")
+    ...
+}
+```
 
-// Add this line
-ELAManager.setAPIKey("YOUR_API_KEY", apiSecret:"YOUR_API_SECRET")
+### Step 3
+#### Set User Credentials
+In general, you should set the User's `email` and `userName`  when the user logs in to your application, and call `-logOut` when they log out.
+##### _Objective C_
 
-...
+```objc
+#import <Eula/Eula.h>
+{
+   [ELAManager setUserEmail:@"USER_EMAIL"];
+   [ELAManager setUserName:@"USER_NAME"];
+    ...
+}
+```
+
+##### _Swift_
+
+```swift
+import Eula
+{
+    ELAManager. setUserEmail("USER_EMAIL")
+    ELAManager. setUserName("USER_NAME")
+    ...
+}
+```
+---
+
+### Step 4
+#### Activate App
+Somewhere near the top of your `-applicationDidBecomeActive:` call `-activateApp`.
+##### _Objective C_
+
+```objc
+#import <Eula/Eula.h>
+
+- (void)applicationDidBecomeActive:(UIApplication *)application 
+{
+    // Add this line
+    [ELAManager activateApp];
+    ...
+}
+```
+
+##### _Swift_
+
+```swift
+import Eula
+
+func applicationDidBecomeActive(_ application: UIApplication) 
+{
+    // Add this line
+    ELAManager.activateApp()
+    ...
 }
 ```
 ---
