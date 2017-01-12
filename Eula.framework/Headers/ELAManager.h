@@ -73,7 +73,13 @@
  Enables the compliance/notification features on `https://eula.io/`
  @discussion A users email must be set to use this feature.
  */
-+(void)activateApp;
++ (void)activateApp;
+
+/**
+ Logs out the user
+ @discussion This method is required when your user logouts of the applicaiton.
+ */
++ (void)logout;
 
 #pragma mark - View Controllers
 
