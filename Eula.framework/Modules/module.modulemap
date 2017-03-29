@@ -1,0 +1,6 @@
+framework module Eula {
+  umbrella header "Eula.h"
+
+  export *
+  module * { export * }
+}

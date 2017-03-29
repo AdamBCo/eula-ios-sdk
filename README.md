@@ -1,36 +1,34 @@
-<p align="center"><img src="https://s3-us-west-1.amazonaws.com/userswitch-web-assets/userswitch_logo.png" width="300" alt="UserSwitch Logo"/></p>
+<p align="center"><img src="https://s3-us-west-1.amazonaws.com/eula-assets/eula-logo.png" width="100" alt="EULA Logo"/></p>
 
+# EULA iOS SDK
 
+The EULA iOS SDK supports products featured on http://www.eula.io
 
-# UserSwitch iOS SDK
+If you do not have a developer account, please register for one [HERE](http://www.eula.io/register).
 
-The UserSwitch iOS SDK supports products featured on http://www.UserSwitch.io
-
-If you do not have a developer account, please register for one [HERE](http://www.userSwitch.com/register).
-
-## Install and Configure UserSwitch iOS SDK
+## Install and Configure Eula iOS SDK
 
 ### Step 1
 
-UserSwitch is available through [CocoaPods](http://cocoapods.org/). To install it, simply add the following line to your `Podfile`:
+EULA is available through [CocoaPods](http://cocoapods.org/). To install it, simply add the following line to your `Podfile`:
 
 ```
-pod 'UserSwitch'
+pod 'Eula'
 ```
 
 ### Step 2
 #### Add to your App Delegate
-Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, add `[UserSwitchManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"]`, where `YOUR_API_KEY` and `YOUR_API_SECRET` are two special tokens found on the [API Docs](http://userSwitch.io/api-documents) of your dashboard.
+Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, add `[ELAManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"]`, where `YOUR_API_KEY` and `YOUR_API_SECRET` are two special tokens found on the [API Docs](http://eula.io/api-documents) of your dashboard.
 
 ##### _Objective C_
 
 ```objc
-#import <UserSwitch/UserSwitch.h>
+#import <Eula/Eula.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Add this line
-    [UserSwitchManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"];
+    [ELAManager setAPIKey:@"YOUR_API_KEY" apiSecret:@"YOUR_API_SECRET"];
     ...
 }
 ```
@@ -38,12 +36,12 @@ Somewhere near the top of your `-applicationDidFinishLaunching:withOptions:`, ad
 ##### _Swift_
 
 ```swift
-import UserSwitch
+import Eula
 
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool 
 {
     // Add this line
-    UserSwitchManager.setAPIKey("YOUR_API_KEY", apiSecret:"YOUR_API_SECRET")
+    ELAManager.setAPIKey("YOUR_API_KEY", apiSecret:"YOUR_API_SECRET")
     ...
 }
 ```
@@ -54,10 +52,10 @@ In general, you should set the User's `email` and `userName`  when the user logs
 ##### _Objective C_
 
 ```objc
-#import <UserSwitch/UserSwitch.h>
+#import <Eula/Eula.h>
 {
-   [UserSwitchManager setUserEmail:@"USER_EMAIL"];
-   [UserSwitchManager setUserName:@"USER_NAME"];
+   [ELAManager setUserEmail:@"USER_EMAIL"];
+   [ELAManager setUserName:@"USER_NAME"];
     ...
 }
 ```
@@ -65,27 +63,27 @@ In general, you should set the User's `email` and `userName`  when the user logs
 ##### _Swift_
 
 ```swift
-import UserSwitch
+import Eula
 {
-    UserSwitchManager. setUserEmail("USER_EMAIL")
-    UserSwitchManager. setUserName("USER_NAME")
+    ELAManager. setUserEmail("USER_EMAIL")
+    ELAManager. setUserName("USER_NAME")
     ...
 }
 ```
 ---
 
 ### Step 4
-#### Report User
+#### Activate App
 Somewhere near the top of your `-applicationDidBecomeActive:` call `-activateApp`.
 ##### _Objective C_
 
 ```objc
-#import <UserSwitch/UserSwitch.h>
+#import <Eula/Eula.h>
 
 - (void)applicationDidBecomeActive:(UIApplication *)application 
 {
     // Add this line
-    [UserSwitchManager reportUserWithIdentifier:"USER_ID"];
+    [ELAManager activateApp];
     ...
 }
 ```
@@ -93,20 +91,20 @@ Somewhere near the top of your `-applicationDidBecomeActive:` call `-activateApp
 ##### _Swift_
 
 ```swift
-import UserSwitch
+import Eula
 
 func applicationDidBecomeActive(_ application: UIApplication) 
 {
     // Add this line
-    UserSwitchManager.reportUserWithIdentifier("USER_ID")
+    ELAManager.activateApp()
     ...
 }
 ```
 ---
 ### Author
 
-Adam Cooper, team@userSwitch.com
+Adam Cooper, team@eula.io
 
 ### License
 
-UserSwitch is available under the Apache 2.0 license. See the LICENSE file for more info.
+EULA is available under the Apache 2.0 license. See the LICENSE file for more info.
