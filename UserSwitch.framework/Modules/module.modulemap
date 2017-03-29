@@ -1,0 +1,6 @@
+framework module UserSwitch {
+  umbrella header "UserSwitch.h"
+
+  export *
+  module * { export * }
+}
