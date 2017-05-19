@@ -65,8 +65,8 @@ In general, you should set the User's `email` and `userName`  when the user logs
 ```swift
 import Eula
 {
-    ELAManager. setUserEmail("USER_EMAIL")
-    ELAManager. setUserName("USER_NAME")
+    ELAManager.setUserEmail("USER_EMAIL")
+    ELAManager.setUserName("USER_NAME")
     ...
 }
 ```
